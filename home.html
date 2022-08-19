@@ -1,0 +1,33 @@
+<div class="home-content">
+
+    {% for post in posts %}
+
+    <a href={{ post.link }}>
+        <h1>{{ post.title }}</h1>
+    </a>
+
+    <div class="home-snippet">
+        {% for snip in post.snippet %}
+
+        <p>
+            {{ snip }}
+        </p>
+
+        {% endfor %}
+        <a href={{ post.link }} class="more">Continue
+            reading</a>
+    </div>
+    <div class="post-meta">
+        <p class="post-date">{{post.date_published}}</p>
+        <p class="post-category-list">Categorized as
+            {% for cat in post.categories %}
+            <a href="" class="post-category">{{ cat }}</a>,
+
+            {% endfor %}
+        </p>
+    </div>
+    <p class="home-separator"></p>
+
+    {% endfor %}
+
+</div>

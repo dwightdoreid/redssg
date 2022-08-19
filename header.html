@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNTETQCLG7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MNTETQCLG7');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dwight Reid" />
+    <meta name="description" content="{{ description }} " />
+    <link rel="stylesheet" href="style.css">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <nav>
+        <a class="brand" href={{ home_link }}>dwightreid.com</a>
+        <a class="nav-link" href="https://dwightreid.com/apps/">Apps</a>
+        <a class="nav-link" href="https://dwightreid.com/blog/?cat=31">Python</a>
+        <a class="nav-link" href={{ home_link }}>Home</a>
+    </nav>
+
+    <!-- <div class="home-content"> -->
+    <!-- {{ content }} -->

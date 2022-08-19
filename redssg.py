@@ -62,7 +62,7 @@ for dir in posts_titles:
 templateLoader = jinja2.FileSystemLoader(searchpath="./")
 env = jinja2.Environment(loader=templateLoader)
 header_template = env.get_template('header.html')
-header = header_template.render(title="dwightreid.com", home_link = "/site")
+header = header_template.render(title="dwightreid.com", home_link = "/site", description="Hey, my site is about general scientific modeling and simulation with a lot of content on power systems and energy technology. Read on.")
 
 footer_template = env.get_template('footer.html')
 footer = footer_template.render(home_link = "/site",year="2022")
@@ -102,6 +102,12 @@ indx = 0
 title = posts_titles[indx]
 
 for title in posts_titles:
+    f = open(os.path.join("posts", title, "post-meta.json"), 'r')
+    x = f.read()
+    y = json.loads(x)
+    # print(y["snippet"][0])
+    header = header_template.render(title="dwightreid.com", home_link = "/site", description=y["snippet"][0])
+
     site_dir = title.casefold().replace(" ", "-")
     site_path = os.path.join(parent_dir, "site", site_dir)
     shutil.copy2("style.css", site_path+"/style.css")
